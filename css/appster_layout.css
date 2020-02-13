@@ -1,0 +1,102 @@
+/* FRAMES THE WEB APPLICATION */
+#appster_root_div {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    height: 90%;
+    top: 5%;
+}
+
+/* SCREENS */
+#appster_home_screen {
+    display: grid;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    padding: 5px 10px 5px 10px;
+}
+#appster_edit_screen {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    height: 100%;
+    top: 0%;
+}
+
+
+/* HOME SCREEN CONTROLS */
+#appster_home_recent_work_container {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+}
+#appster_home_recent_work_heading {}
+#appster_home_recent_work_list {}
+
+#appster_home_logo {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+    cursor: default;
+}
+
+#appster_home_new_list_container {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 1;
+    display: flex;
+}
+#appster_home_new_list_button {
+    margin: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* HOME SCREEN CLASSES */
+.appster_home_work_link {}
+
+/* EDIT SCREEN CONTROLS */
+#appster_edit_toolbar {
+    position: absolute;
+    top: 0%;
+    height: 10%;
+    left: 0%;
+    width: 100%;
+}
+#appster_edit_home_link {
+    font-size: 36pt;
+    cursor: pointer;
+}
+#appster_edit_home_link:hover {
+    color: var(--swatch-accent);
+}
+#appster_edit_trash {
+    position: absolute;
+    left: 85%;
+    width: 15%;
+    text-align: right;
+    top: 0%;
+}
+#appster_edit_workspace {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    height: 90%;
+    top: 10%;
+}
+#appster_edit_workspace {
+    padding-left: 2%;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-gap: 5px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+#gologolo_toolbar {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 40%;
+    height: 100%;
+}
+#gologolo_text {
+    position: absolute;
+    top: 0%;
+    left: 40%;
+}

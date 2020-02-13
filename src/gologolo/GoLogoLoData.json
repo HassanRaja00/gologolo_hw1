@@ -1,0 +1,71 @@
+{
+    "app_text": [
+        {"appster_home_logo_text": "GoLogoLo"},
+        {"appster_home_new_work_button_text": "Create New Logo"},
+        {"appster_home_recent_work_heading_text": "Recent Logos"},
+        {"appster_edit_home_link_text": "GoLogoLo Home"},
+        {"appster_missing_root_div_error_text": "'appster_root_div' not found in DOM"},
+        
+        {"appster_yes_no_modal_prompt_text": "Are you sure you want to delete this logo?"},
+        {"appster_yes_no_modal_yes_button_text": "Yes"},
+        {"appster_yes_no_modal_no_button_text": "No"},
+        {"appster_yes_no_modal_footer_text": "The logo will not be retreivable."},
+        
+        {"appster_confirm_modal_prompt_text": "Illegal name, logo already exists with that name"},
+        {"appster_confirm_modal_ok_button_text": "Ok"},
+        {"appster_confirm_modal_footer_text": "Duplicate Name"},
+        
+        {"appster_text_input_modal_prompt_text": "Enter a name for your logo: "},
+        {"appster_text_input_modal_enter_button_text": "Enter"},
+        {"appster_text_input_modal_cancel_button_text": "Cancel"},
+        {"appster_text_input_modal_footer_text": "Creating New Logo"},
+
+        {"gologolo_edit_text_text": "Edit Text &#x270e;"},
+        {"gologolo_font_size_text": "Font Size: "},
+        {"gologolo_text_color_text": "Text Color: "},
+        {"gologolo_background_color_text": "Background Color: "},
+        {"gologolo_border_color_text": "Border Color: "},
+        {"gologolo_border_radius_text": "Border Radius: "},
+        {"gologolo_border_thickness_text": "Border Thickness: "},
+        {"gologolo_padding_text": "Padding: "},
+        {"gologolo_margin_text": "Margin: "}
+    ],
+    "recent_work": [
+        {
+            "name": "My First Logo",
+            "text": "ABC",
+            "font_size": 30,
+            "text_color": "#123456",
+            "background_color": "#654321",
+            "border_color": "#abcdef",
+            "border_radius": 15,
+            "border_thickness": 2,
+            "padding": 20,
+            "margin": 10
+        },
+        {
+            "name": "HomepageLogo",
+            "text": "123",
+            "font_size": 16,
+            "text_color": "#13579b",
+            "background_color": "#b97531",
+            "border_color": "#004488",
+            "border_radius": 10,
+            "border_thickness": 5,
+            "padding": 5,
+            "margin": 5
+        },
+        {
+            "name": "LogoForStuff",
+            "text": "You and Me",
+            "font_size": 48,
+            "text_color": "#bbeeee",
+            "background_color": "#224400",
+            "border_color": "#000033",
+            "border_radius": 1,
+            "border_thickness": 12,
+            "padding": 5,
+            "margin": 10
+        }
+    ]
+}
