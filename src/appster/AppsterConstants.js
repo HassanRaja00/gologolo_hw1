@@ -81,20 +81,20 @@ export const AppsterGUIId = {
     APPSTER_EDIT_WORKSPACE: 'appster_edit_workspace',
 
     // IDs FOR MODALS
-    APPSTER_YES_NO_MODAL: 'appster_yes_no_modal',
+    APPSTER_YES_NO_MODAL: 'appster_yes_no_modal', //Delete logo prompt for now
     APPSTER_YES_NO_MODAL_FRAME: 'appster_yes_no_modal_frame',
     APPSTER_YES_NO_MODAL_HEADER: 'appster_yes_no_modal_header',
     APPSTER_YES_NO_MODAL_SECTION: 'appster_yes_no_modal_section',
     APPSTER_YES_NO_MODAL_YES_BUTTON: 'appster_yes_no_modal_yes_button',
     APPSTER_YES_NO_MODAL_NO_BUTTON: 'appster_yes_no_modal_no_button',
     APPSTER_YES_NO_MODAL_FOOTER: 'appster_yes_no_modal_footer',
-    APPSTER_CONFIRM_MODAL: 'appster_confirm_modal',
+    APPSTER_CONFIRM_MODAL: 'appster_confirm_modal', // illege name prompt for now
     APPSTER_CONFIRM_MODAL_FRAME: 'appster_confirm_modal_frame',
     APPSTER_CONFIRM_MODAL_HEADER: 'appster_confirm_modal_header',
     APPSTER_CONFIRM_MODAL_SECTION: 'appster_confirm_modal_section',
     APPSTER_CONFIRM_MODAL_OK_BUTTON: 'appster_confirm_modal_ok_button',
     APPSTER_CONFIRM_MODAL_FOOTER: 'appster_confirm_frame',
-    APPSTER_TEXT_INPUT_MODAL: 'appster_text_input_modal',
+    APPSTER_TEXT_INPUT_MODAL: 'appster_text_input_modal', // Name logo prompt for now
     APPSTER_TEXT_INPUT_MODAL_FRAME: 'appster_text_input_modal_frame',
     APPSTER_TEXT_INPUT_MODAL_HEADER: 'appster_text_input_modal_header',
     APPSTER_TEXT_INPUT_MODAL_SECTION: 'appster_text_input_modal_section',

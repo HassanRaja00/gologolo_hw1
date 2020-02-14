@@ -121,6 +121,7 @@ export default class AppsterController {
      */
     processCancelDeleteWork() {
         // JUST HIDE THE DIALOG
+        this.model.view.hideDialog();
 
     }
 

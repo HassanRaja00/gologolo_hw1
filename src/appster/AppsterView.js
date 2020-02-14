@@ -329,6 +329,10 @@ export default class AppsterView {
                                             [AppsterGUIClass.APPSTER_MODAL_FOOTER],
                                             [],
                                             AppsterText.APPSTER_TEXT_INPUT_MODAL_FOOTER_TEXT);
+        cancelButton.addEventListener("click", () => {
+            //hide dialog
+            this.hideDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+        });
         p.appendChild(strong);
         section.appendChild(p);
         textFrame.appendChild(header);
@@ -511,16 +515,16 @@ export default class AppsterView {
    /**
     * This method is for hiding the yes/no dialog.
     */
-   hideDialog() {
-       let dialog = document.getElementById(AppsterGUIId.MODAL_YES_NO_DIALOG);
+   hideDialog(docId) {
+       let dialog = document.getElementById(docId);
        dialog.classList.remove(AppsterGUIClass.IS_VISIBLE);
    }
 
    /**
     * This method is for showing the yes/no dialog.
     */
-   showDialog() {
-       let dialog = document.getElementById(AppsterGUIId.MODAL_YES_NO_DIALOG);
+   showDialog(docId) {
+       let dialog = document.getElementById(docId);
        dialog.classList.add(AppsterGUIClass.IS_VISIBLE);
    }
 }

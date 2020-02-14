@@ -37,7 +37,7 @@ export default class AppsterModel {
             this.view.loadWork(this.workToEdit); 
 
             // CHANGE THE SCREEN
-            this.view.goToEditScreen();
+            this.view.goToEditScreen(work);
         }
     }
 
