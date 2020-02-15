@@ -19,8 +19,7 @@ export default class GoLogoLoView extends AppsterView {
         editTextButton.innerHTML = AppsterSymbols.EDIT;
         editTextButton.addEventListener("click", () => {
             console.log("IT WORKS!");
-            let newView = new AppsterView();
-            newView.showDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+            
             // TODO write function to allow user to edit text in logo
         });
         let fontSizeSlider = this.buildElement(AppsterHTML.INPUT, GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, [], rangeAttributes);

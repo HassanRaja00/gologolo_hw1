@@ -1,9 +1,11 @@
 import {AppsterCallback, AppsterGUIClass, AppsterGUIId, AppsterHTML, AppsterSymbols, AppsterText} from './AppsterConstants.js'
+// import AppsterController from './AppsterController'
 
 export default class AppsterView {
     constructor() {
         this.appText = new Array();
         this.appTextControls = new Array();
+        this.controller = null;
     }
 
     loadWork(workToLoad) {
@@ -172,6 +174,13 @@ export default class AppsterView {
                                                 [],
                                                 AppsterText.APPSTER_HOME_NEW_WORK_BUTTON_TEXT);
         newWorkDiv.appendChild(newWorkButton);
+        newWorkButton.addEventListener("click", () => {
+            //get text input from user
+            this.showDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+
+            //create new work (should take input as parameter)
+            this.controller.processCreateNewWork();
+        });
         return newWorkDiv;
     }
 
@@ -184,6 +193,10 @@ export default class AppsterView {
                                             AppsterText.APPSTER_EDIT_HOME_LINK_TEXT);
         let trash = this.buildElement(AppsterHTML.DIV, AppsterGUIId.APPSTER_EDIT_TRASH);
         trash.innerHTML = AppsterSymbols.DELETE;
+        trash.addEventListener("click", () => {
+            // delete logo
+            this.showDialog(AppsterGUIId.APPSTER_YES_NO_MODAL);
+        });
         toolbarDiv.appendChild(headerDiv);
         toolbarDiv.appendChild(trash);
         let editScreenDiv = this.buildElement(AppsterHTML.DIV, AppsterGUIId.APPSTER_EDIT_SCREEN);
@@ -233,6 +246,17 @@ export default class AppsterView {
                                             [AppsterGUIClass.APPSTER_MODAL_FOOTER],
                                             [],
                                             AppsterText.APPSTER_YES_NO_MODAL_FOOTER_TEXT);
+        noButton.addEventListener("click", () => {
+            // closes dialog 
+            this.hideDialog(AppsterGUIId.APPSTER_YES_NO_MODAL);
+        });
+        yesButton.addEventListener("click", () => {
+            //delete the logo
+            console.log("this should delete the logo");
+            // test bottom when you are able to create a new logo
+            // let remover = new AppsterController();
+            // remover.processConfirmDeleteWork();
+        });
         p.appendChild(strong);
         section.appendChild(p);
         yesNoFrame.appendChild(header);
@@ -331,6 +355,17 @@ export default class AppsterView {
                                             AppsterText.APPSTER_TEXT_INPUT_MODAL_FOOTER_TEXT);
         cancelButton.addEventListener("click", () => {
             //hide dialog
+            this.hideDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+        });
+        enterButton.addEventListener("click", () => {
+            // save the text entered
+            let inputText = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD).value;
+            // put saved text in controller method to add new logo
+            // this.controller.processCreateNewWork(inputText);
+            console.log(inputText + "\nthis should save name for new logo");
+
+
+            // close dialog after
             this.hideDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
         });
         p.appendChild(strong);

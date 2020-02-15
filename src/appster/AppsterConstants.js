@@ -88,7 +88,7 @@ export const AppsterGUIId = {
     APPSTER_YES_NO_MODAL_YES_BUTTON: 'appster_yes_no_modal_yes_button',
     APPSTER_YES_NO_MODAL_NO_BUTTON: 'appster_yes_no_modal_no_button',
     APPSTER_YES_NO_MODAL_FOOTER: 'appster_yes_no_modal_footer',
-    APPSTER_CONFIRM_MODAL: 'appster_confirm_modal', // illege name prompt for now
+    APPSTER_CONFIRM_MODAL: 'appster_confirm_modal', // illegal name prompt for now
     APPSTER_CONFIRM_MODAL_FRAME: 'appster_confirm_modal_frame',
     APPSTER_CONFIRM_MODAL_HEADER: 'appster_confirm_modal_header',
     APPSTER_CONFIRM_MODAL_SECTION: 'appster_confirm_modal_section',
@@ -144,7 +144,7 @@ export const AppsterHTML = {
   */
  export const AppsterSymbols = {
     DELETE: "&#128465;" ,    // TRASH SYMBOL
-    EDIT: "Edit Text"
+    EDIT: "Edit Text ✎"
 };
 
 export const AppsterText = {

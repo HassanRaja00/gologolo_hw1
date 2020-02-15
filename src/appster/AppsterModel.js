@@ -5,6 +5,8 @@ export default class AppsterModel {
 
         // THE WORK CURRENTLY BEING EDITED
         this.currentWork = null;
+
+        this.view = null;
     }
 
     getRecentWork(workName) {

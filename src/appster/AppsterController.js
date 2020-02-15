@@ -85,14 +85,14 @@ export default class AppsterController {
     /**
      * This function is called when the user requests to create
      * new work.
+     * -Hassan: read in input from the text box then use this method
      */
-    processCreateNewWork() {
+    processCreateNewWork(inputText) {
         console.log("processCreateNewWork");
-
-        // PROMPT FOR THE NAME OF THE NEW LIST
+        
         
         // MAKE A BRAND NEW LIST
-        this.model.goList();
+        this.model.loadNewList();
     }
 
     /**
@@ -121,7 +121,7 @@ export default class AppsterController {
      */
     processCancelDeleteWork() {
         // JUST HIDE THE DIALOG
-        this.model.view.hideDialog();
+        // this.model.view.hideDialog();
 
     }
 
@@ -156,6 +156,6 @@ export default class AppsterController {
      */
     processDeleteWork() {
         // VERIFY VIA A DIALOG BOX
-        window.todo.model.view.showDialog();
+        // window.todo.model.view.showDialog();
     }
 }
