@@ -1,10 +1,69 @@
 import {GoLogoLoGUIClass, GoLogoLoGUIId, GoLogoLoText} from './GoLogoLoConstants.js'
-import {AppsterHTML, AppsterSymbols, AppsterGUIId} from '../appster/AppsterConstants.js'
+import {AppsterHTML, AppsterSymbols, AppsterGUIId, AppsterGUIClass} from '../appster/AppsterConstants.js'
 import AppsterView from '../appster/AppsterView.js'
 
 export default class GoLogoLoView extends AppsterView {
     constructor() {
         super();
+    }
+
+    /*
+    makes the popup for edit text to enter new text
+    */
+    buildGoLogoLoEditWorkModal(){
+        let editTextModal = this.buildElement( AppsterHTML.DIV,
+                                                GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL,
+                                                [AppsterGUIClass.APPSTER_MODAL],
+                                                [],
+                                                null,
+                                                AppsterGUIClass.MODAL_ANIMATION_LEFT );
+        let textFrame = this.buildElement( AppsterHTML.DIV,
+                                            GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_FRAME,
+                                            [AppsterGUIClass.APPSTER_MODAL_FRAME]);
+        let header = this.buildElement( AppsterHTML.HEADER,
+                                        GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_HEADER,
+                                        [AppsterGUIClass.APPSTER_MODAL_HEADER]);
+        let section = this.buildElement( AppsterHTML.SECTION,
+                                          GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_SECTION,
+                                          [AppsterGUIClass.APPSTER_MODAL_SECTION]);
+        let p = this.buildElement(AppsterHTML.P);
+        let strong = this.buildElement(     AppsterHTML.STRONG,
+                                            "",
+                                            [],
+                                            [],
+                                            GoLogoLoText.GOLOGOLO_TEXT_INPUT_MODAL_PROMPT_TEXT);
+        let textFieldAttributes = [];
+        textFieldAttributes[AppsterHTML.TYPE] = AppsterHTML.TEXT;
+        let textField = this.buildElement(  AppsterHTML.INPUT,
+            GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_TEXTFIELD,
+            [AppsterGUIClass.APPSTER_MODAL_TEXTFIELD],
+            textFieldAttributes);
+        let enterButton = this.buildElement(   AppsterHTML.BUTTON, 
+            GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_ENTER_BUTTON,
+            [AppsterGUIClass.APPSTER_MODAL_BUTTON],
+            [],
+            GoLogoLoText.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON_TEXT);
+        let cancelButton = this.buildElement(AppsterHTML.BUTTON, 
+            GoLogoLoGUIId.APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON,
+            [AppsterGUIClass.APPSTER_MODAL_BUTTON],
+            [],
+            GoLogoLoText.APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON_TEXT);
+        let footer = this.buildElement(     AppsterHTML.FOOTER, 
+            "", 
+            [AppsterGUIClass.APPSTER_MODAL_FOOTER],
+            [],
+            GoLogoLoText.APPSTER_TEXT_INPUT_MODAL_FOOTER_TEXT); 
+        
+        p.appendChild(strong);
+        section.appendChild(p);
+        textFrame.appendChild(header);
+        textFrame.appendChild(section);
+        section.appendChild(textField);
+        section.appendChild(enterButton);
+        section.appendChild(cancelButton);
+        textFrame.appendChild(footer);
+        editTextModal.appendChild(textFrame);
+        return editTextModal;                                                              
     }
 
     fillAppWorkspace(workspace) {
@@ -19,9 +78,10 @@ export default class GoLogoLoView extends AppsterView {
         editTextButton.innerHTML = AppsterSymbols.EDIT;
         editTextButton.addEventListener("click", () => {
             console.log("IT WORKS!");
-            
+            this.showDialog(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL);
             // TODO write function to allow user to edit text in logo
         });
+        let gologoloTextInputModal = this.buildGoLogoLoEditWorkModal();
         let fontSizeSlider = this.buildElement(AppsterHTML.INPUT, GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, [], rangeAttributes);
         let textColorPicker = this.buildElement(AppsterHTML.INPUT, GoLogoLoGUIId.GOLOGOLO_TEXT_COLOR_PICKER, [], colorPickerAttributes);
         let backgroundColorPicker = this.buildElement(AppsterHTML.INPUT, GoLogoLoGUIId.GOLOGOLO_BACKGROUND_COLOR_PICKER, [], colorPickerAttributes);
@@ -60,6 +120,7 @@ export default class GoLogoLoView extends AppsterView {
 
         workspace.appendChild(toolbar);
         workspace.appendChild(textDiv);
+        workspace.appendChild(gologoloTextInputModal);
         return workspace;
     }
 
@@ -107,4 +168,6 @@ export default class GoLogoLoView extends AppsterView {
         let textList = document.getElementById(listItemId);
         textList.innerHTML += textList.innerHTML + letterToAppend;
     }
+
+    
 }

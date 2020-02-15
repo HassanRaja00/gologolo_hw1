@@ -26,10 +26,25 @@ export const GoLogoLoGUIId = {
     GOLOGOLO_BORDER_THICKNESS_SLIDER: "gologolo_border_thickness_slider",
     GOLOGOLO_PADDING_SLIDER: "gologolo_padding_slider",
     GOLOGOLO_MARGIN_SLIDER: "gologolo_margin_slider",
-    GOLOGOLO_TEXT: "gologolo_text"
+    GOLOGOLO_TEXT: "gologolo_text",
+
+    //Ids for modals
+    GOLOGOLO_TEXT_INPUT_MODAL: "gologolo_text_input_modal", //Text input for editing text in logo
+    GOLOGOLO_TEXT_INPUT_MODAL_FRAME: "gologolo_text_input_modal_frame",
+    GOLOGOLO_TEXT_INPUT_MODAL_HEADER: "gologolo_text_input_modal_header",
+    GOLOGOLO_TEXT_INPUT_MODAL_SECTION: "gologolo_text_input_modal_section",
+    GOLOGOLO_TEXT_INPUT_MODAL_TEXTFIELD: "gologolo_text_input_modal_textfield",
+    GOLOGOLO_TEXT_INPUT_MODAL_ENTER_BUTTON: "gologolo_text_input_modal_enter_button",
+    GOLOGOLO_TEXT_INPUT_MODAL_CANCEL_BUTTON: "gologolo_text_input_modal_cancel_button",
+    GOLOGOLO_TEXT_INPUT_MODAL_FOOTER: "gologolo_text_input_modal_footer"
+
 };
 
 export const GoLogoLoText = {
+    GOLOGOLO_TEXT_INPUT_MODAL_PROMPT_TEXT: "gologolo_text_input_modal_prompt_text",
+    GOLOGOLO_TEXT_INPUT_MODAL_ENTER_BUTTON_TEXT: "gologolo_text_input_modal_enter_button_text",
+    GOLOGOLO_TEXT_INPUT_MODAL_CANCEL_BUTTON_TEXT: "gologolo_text_input_modal_cancel_button_text",
+    GOLOGOLO_TEXT_INPUT_MODAL_FOOTER_TEXT: "gologolo_text_input_modal_footer_text",
     GOLOGOLO_EDIT_TEXT_TEXT: "gologolo_edit_text_text",
     GOLOGOLO_FONT_SIZE_TEXT: "gologolo_font_size_text",
     GOLOGOLO_TEXT_COLOR_TEXT: "gologolo_text_color_text",
