@@ -134,6 +134,12 @@ export default class GoLogoLoView extends AppsterView {
     }
 
     loadWork(work) {
+        //set the min and max values for font slider
+        document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER).min = 10;
+        document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER).max = 90;
+        console.log("min: " + document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER).min + " max: " +
+        document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER).max);
+
         let textDiv = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         textDiv.innerHTML = work.getText();
         let fontSizeSlider = document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER);

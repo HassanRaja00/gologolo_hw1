@@ -38,6 +38,10 @@ export default class AppsterController {
         // AND THE MODAL BUTTONS
         this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_YES_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CONFIRM_DELETE_WORK]);
         this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_NO_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_DELETE_WORK]);
+
+        this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON, AppsterHTML.CLICK, this["processNewLogo"]);
+        this.registerEventHandler(AppsterGUIId.APPSTER_CONFIRM_MODAL_OK_BUTTON, AppsterHTML.CLICK, this["cancelButton"]);
+
     }
 
     /**
@@ -122,7 +126,7 @@ export default class AppsterController {
      */
     processCancelDeleteWork = () => {
         console.log("processCancelDeleteWork()");
-        this.model.view.hideDialog(AppsterGUIId.APPSTER_YES_NO_MODAL); //this.model undefined??
+        this.model.view.hideDialog(AppsterGUIId.APPSTER_YES_NO_MODAL); 
 
     }
 
@@ -161,5 +165,10 @@ export default class AppsterController {
     processDeleteWork = () => {
         // VERIFY VIA A DIALOG BOX
         this.model.view.showDialog(AppsterGUIId.APPSTER_YES_NO_MODAL);
+    }
+
+    // closes the illegal name modal
+    cancelButton = () => {
+        this.model.view.hideDialog(AppsterGUIId.APPSTER_CONFIRM_MODAL);
     }
 }

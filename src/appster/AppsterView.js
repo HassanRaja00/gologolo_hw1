@@ -346,17 +346,6 @@ export default class AppsterView {
             //hide dialog
             this.hideDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
         });
-        enterButton.addEventListener("click", () => {
-            // save the text entered
-            let inputText = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD).value;
-            // put saved text in controller method to add new logo
-            // this.controller.processCreateNewWork(inputText);
-            console.log(inputText + "\nthis should save name for new logo");
-
-
-            // close dialog after
-            this.hideDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
-        });
         p.appendChild(strong);
         section.appendChild(p);
         textFrame.appendChild(header);
@@ -435,6 +424,8 @@ export default class AppsterView {
 
         // SHOW THE EDIT SCREEN
         this.showElementWithId(AppsterGUIId.APPSTER_EDIT_SCREEN, true);
+
+        // maybe the actual editing happens here?
     }
 
     /**
