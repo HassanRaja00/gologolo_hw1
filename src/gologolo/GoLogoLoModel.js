@@ -46,14 +46,6 @@ export default class GoLogoLoModel extends AppsterModel {
 
     //update the text of a logo
     updateText(workArray, name, newText) {
-        let appwork = new GoLogoLoLogo();
-        for(let i = 0; i < workArray.length; i++){  // find the work data we want to edit
-            let jsonWork = workArray[i];
-            if(jsonWork.name === name) {
-                appwork.setText(newText);  // set the new text
-            }
-        }
-        return appwork;
  //       this.view.
     }
 }

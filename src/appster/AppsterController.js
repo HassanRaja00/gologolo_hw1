@@ -36,8 +36,8 @@ export default class AppsterController {
         this.registerEventHandler(AppsterGUIId.APPSTER_EDIT_TRASH, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_DELETE_WORK]);
 
         // AND THE MODAL BUTTONS
-        this.registerEventHandler(AppsterGUIId.DIALOG_YES_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CONFIRM_DELETE_WORK]);
-        this.registerEventHandler(AppsterGUIId.DIALOG_NO_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_DELETE_WORK]);
+        this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_YES_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CONFIRM_DELETE_WORK]);
+        this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_NO_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_DELETE_WORK]);
     }
 
     /**
@@ -92,7 +92,8 @@ export default class AppsterController {
         
         
         // MAKE A BRAND NEW LIST
-        this.model.loadNewList();
+        newList = this.model.loadNewList();
+        
     }
 
     /**
@@ -119,9 +120,9 @@ export default class AppsterController {
      * button in the popup dialog after having requested to delete
      * the loaded work.
      */
-    processCancelDeleteWork() {
-        // JUST HIDE THE DIALOG
-        // this.model.view.hideDialog();
+    processCancelDeleteWork = () => {
+        console.log("processCancelDeleteWork()");
+        this.model.view.hideDialog(AppsterGUIId.APPSTER_YES_NO_MODAL); //this.model undefined??
 
     }
 
@@ -141,9 +142,12 @@ export default class AppsterController {
      * button in the popup dialog after having requested to delete
      * the loaded work.
      */
-    processConfirmDeleteWork() {
+    processConfirmDeleteWork = () => {
         // DELETE THE WORK
         this.model.removeWork(this.model.getWorkToEdit());
+
+        //close dialog 
+        this.model.view.hideDialog(AppsterGUIId.APPSTER_YES_NO_MODAL);
 
         // GO BACK TO THE HOME SCREEN
         this.model.goHome();
@@ -154,8 +158,8 @@ export default class AppsterController {
      * button, i.e. the delete button, in order to delete the
      * list being edited.
      */
-    processDeleteWork() {
+    processDeleteWork = () => {
         // VERIFY VIA A DIALOG BOX
-        // window.todo.model.view.showDialog();
+        this.model.view.showDialog(AppsterGUIId.APPSTER_YES_NO_MODAL);
     }
 }

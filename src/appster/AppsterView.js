@@ -246,17 +246,6 @@ export default class AppsterView {
                                             [AppsterGUIClass.APPSTER_MODAL_FOOTER],
                                             [],
                                             AppsterText.APPSTER_YES_NO_MODAL_FOOTER_TEXT);
-        noButton.addEventListener("click", () => {
-            // closes dialog 
-            this.hideDialog(AppsterGUIId.APPSTER_YES_NO_MODAL);
-        });
-        yesButton.addEventListener("click", () => {
-            //delete the logo
-            console.log("this should delete the logo");
-            // test bottom when you are able to create a new logo
-            // let remover = new AppsterController();
-            // remover.processConfirmDeleteWork();
-        });
         p.appendChild(strong);
         section.appendChild(p);
         yesNoFrame.appendChild(header);

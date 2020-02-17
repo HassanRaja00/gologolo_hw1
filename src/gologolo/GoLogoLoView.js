@@ -42,18 +42,27 @@ export default class GoLogoLoView extends AppsterView {
             GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_ENTER_BUTTON,
             [AppsterGUIClass.APPSTER_MODAL_BUTTON],
             [],
-            GoLogoLoText.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON_TEXT);
+            GoLogoLoText.GOLOGOLO_TEXT_INPUT_MODAL_ENTER_BUTTON_TEXT);
         let cancelButton = this.buildElement(AppsterHTML.BUTTON, 
-            GoLogoLoGUIId.APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON,
+            GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_CANCEL_BUTTON,
             [AppsterGUIClass.APPSTER_MODAL_BUTTON],
             [],
-            GoLogoLoText.APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON_TEXT);
-        let footer = this.buildElement(     AppsterHTML.FOOTER, 
+            GoLogoLoText.GOLOGOLO_TEXT_INPUT_MODAL_CANCEL_BUTTON_TEXT);
+        let footer = this.buildElement(AppsterHTML.FOOTER, 
             "", 
             [AppsterGUIClass.APPSTER_MODAL_FOOTER],
             [],
-            GoLogoLoText.APPSTER_TEXT_INPUT_MODAL_FOOTER_TEXT); 
-        
+            GoLogoLoText.GOLOGOLO_TEXT_INPUT_MODAL_FOOTER_TEXT); 
+        enterButton.addEventListener("click", () => {
+            console.log("this should register text into the logo");
+            let inputText = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_TEXTFIELD).value;
+            console.log(inputText);
+            //close dialog after action
+            this.hideDialog(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL);
+        });
+        cancelButton.addEventListener("click", () => {
+            this.hideDialog(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL);
+        });
         p.appendChild(strong);
         section.appendChild(p);
         textFrame.appendChild(header);
