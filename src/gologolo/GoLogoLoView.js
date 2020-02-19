@@ -57,6 +57,9 @@ export default class GoLogoLoView extends AppsterView {
             console.log("this should register text into the logo");
             let inputText = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_TEXTFIELD).value;
             console.log(inputText);
+
+            this.controller.processEditText(inputText);
+
             //close dialog after action
             this.hideDialog(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL);
         });

@@ -177,9 +177,6 @@ export default class AppsterView {
         newWorkButton.addEventListener("click", () => {
             //get text input from user
             this.showDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
-
-            //create new work (should take input as parameter)
-            this.controller.processCreateNewWork();
         });
         return newWorkDiv;
     }

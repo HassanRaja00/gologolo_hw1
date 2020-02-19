@@ -91,14 +91,14 @@ export default class AppsterController {
      * new work.
      * -Hassan: read in input from the text box then use this method
      */
-    processCreateNewWork(inputText) {
-        console.log("processCreateNewWork");
+    // processCreateNewWork(inputText) {
+    //     console.log("processCreateNewWork");
         
         
-        // MAKE A BRAND NEW LIST
-        newList = this.model.loadNewList();
+    //     // MAKE A BRAND NEW LIST
+    //     newList = this.model.loadNewList();
         
-    }
+    // }
 
     /**
      * This function responds to when the user clicks on a link
