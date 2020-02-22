@@ -17,6 +17,7 @@ export default class GoLogoLoModel extends AppsterModel {
         console.log("load " + workToLoad.getName());
     }
 
+    //this method will help change colors
     makeColor(colorData) {
         return "rgb(" + colorData.red + ", " + colorData.green + ", " + colorData.blue + ")";
     }
@@ -47,7 +48,32 @@ export default class GoLogoLoModel extends AppsterModel {
 
     //update the text of a logo
     updateText(work, newText) {
-        //work.setText(newText);
+        work.setText(newText);
         console.log("Printing " + newText + " from gologolo model");
+    }
+
+    updateFontSize(work, value) {
+        work.setFontSize(value);
+        console.log("changed font size to: " + work.getFontSize());
+    }
+
+    updateBorderRadius(work, value) {
+        work.setBorderRadius(value);
+        console.log("changed border radius size to: " + work.getBorderRadius());
+    }
+
+    updateBorderThickness(work, value) {
+        work.setBorderThickness(value);
+        console.log("changed border thickness to: " + work.getBorderThickness());
+    }
+
+    updatePadding(work, value) {
+        work.setPadding(value);
+        console.log("changed padding to: " + work.getPadding());
+    }
+
+    updateMargin(work, value) {
+        work.setMargin(value);
+        console.log("changed margin to: " + work.getMargin());
     }
 }
