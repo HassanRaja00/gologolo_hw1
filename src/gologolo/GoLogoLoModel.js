@@ -18,8 +18,16 @@ export default class GoLogoLoModel extends AppsterModel {
     }
 
     //this method will help change colors
-    makeColor(colorData) {
-        return "rgb(" + colorData.red + ", " + colorData.green + ", " + colorData.blue + ")";
+    updateTextColor(work, newColor){
+        work.setTextColor(newColor);
+    }
+
+    updateBackgroundColor(work, newColor){
+        work.setBackgroundColor(newColor);
+    }
+
+    updateBorderColor(work, newColor){
+        work.setBorderColor(newColor);
     }
 
     buildAppWork(workArray, name) {
@@ -48,8 +56,11 @@ export default class GoLogoLoModel extends AppsterModel {
 
     //update the text of a logo
     updateText(work, newText) {
-        work.setText(newText);
-        console.log("Printing " + newText + " from gologolo model");
+        if(newText != ""){
+            work.setText(newText);
+            console.log("Printing " + newText + " from gologolo model");
+        }
+        
     }
 
     updateFontSize(work, value) {

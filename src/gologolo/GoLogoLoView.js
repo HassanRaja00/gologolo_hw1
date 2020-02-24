@@ -100,8 +100,23 @@ export default class GoLogoLoView extends AppsterView {
             this.controller.processEditFontSize(value);
         });
         let textColorPicker = this.buildElement(AppsterHTML.INPUT, GoLogoLoGUIId.GOLOGOLO_TEXT_COLOR_PICKER, [], colorPickerAttributes);
+        textColorPicker.addEventListener("change", () =>{
+            console.log("text color picker change");
+            let color = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_COLOR_PICKER).value;
+            this.controller.processEditTextColor(color);
+        });
         let backgroundColorPicker = this.buildElement(AppsterHTML.INPUT, GoLogoLoGUIId.GOLOGOLO_BACKGROUND_COLOR_PICKER, [], colorPickerAttributes);
+        backgroundColorPicker.addEventListener("change", () => {
+            console.log("background color picker change");
+            let color = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BACKGROUND_COLOR_PICKER).value;
+            this.controller.processEditBackgroundColor(color);
+        });
         let borderColorPicker = this.buildElement(AppsterHTML.INPUT, GoLogoLoGUIId.GOLOGOLO_BORDER_COLOR_PICKER, [], colorPickerAttributes);
+        borderColorPicker.addEventListener("change", () => {
+            console.log("border color picker change");
+            let color = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_COLOR_PICKER).value;
+            this.controller.processEditBorderColor(color);
+        });
         let borderRadiusSlider = this.buildElement(AppsterHTML.INPUT, GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER, [], rangeAttributes);
         borderRadiusSlider.addEventListener("change", () => {
             let value = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER).value;
@@ -177,10 +192,12 @@ export default class GoLogoLoView extends AppsterView {
         let brSize = borderRadiusValue + "px";
         document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT).style.borderRadius = brSize;
 
-        //not sure if border thickness does anthing bc there is no border? (yet)
+        //set border to solid
+        document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT).style.border = "solid";
+
         let borderThicknessValue = work.getBorderThickness();
         let btSize = borderThicknessValue + "px";
-        document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT).style.borderThickness = btSize;
+        document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT).style.borderWidth = btSize;
 
         let paddingValue = work.getPadding();
         let paddingSize = paddingValue + "px";
@@ -189,6 +206,15 @@ export default class GoLogoLoView extends AppsterView {
         let marginValue = work.getMargin();
         let marginSize = marginValue + "px";
         document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT).style.margin = marginSize;
+
+        let textColor = work.getTextColor();
+        document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT).style.color = textColor;
+
+        let backgroundColor = work.getBackgroundColor();
+        document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT).style.backgroundColor = backgroundColor;
+
+        let borderColor = work.getBorderColor();
+        document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT).borderColor = borderColor;
         // end styling
 
         let textDiv = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
